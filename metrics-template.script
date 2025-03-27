@@ -1,0 +1,3 @@
+connect --service event-streaming-service.SERVICE_ID
+cd /root/event-streaming/metrics
+json

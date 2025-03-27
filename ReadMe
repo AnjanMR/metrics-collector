@@ -1,0 +1,22 @@
+The script collects the stream, memory and rule metrics
+
+Steps to execute the script:
+Script Name: monitor.sh
+Input: Event Streaming Service (ESS) -  service-id
+Output: JSON files corresponding to stream metrics and rule metrics
+
+Command to get the service-id of ESS:
+1. SSH to required ESS box
+2. Execute the command: cat /etc/event-streaming-service/service-id
+3. Output will be a value like, "55ab4a79-4207-4d48-b0f1-2181e5867237"
+
+Placing the files and creating the directory for result files:
+1. SSH to SA (Admin-Server)
+2. mkdir /root/metrics-collector/
+3. mv metrics-template.script /root/metrics-collector/
+4. mv rule-metrics-template.script /root/metrics-collector/
+5. mkdir /var/log/event-streaming-service/resultfiles/
+
+Running the script:
+sh monitor.sh <service-id>
+eg: sh monitor.sh 55ab4a79-4207-4d48-b0f1-2181e5867237
